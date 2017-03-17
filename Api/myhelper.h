@@ -4,7 +4,7 @@
 #include <QtCore>
 #include <QtGui>
 #include <QDesktopWidget>
-//#include "frmmessagebox.h"
+#include "../frmmessagebox.h"
 
 class myHelper: public QObject
 {
@@ -60,14 +60,14 @@ public:
         QRegExp RegExp("((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)");
         return RegExp.exactMatch(IP);
     }
-/*
+
     //显示信息框,仅确定按钮
     static void ShowMessageBoxInfo(QString info)
     {
         frmMessageBox *msg = new frmMessageBox;
         msg->SetMessage(info, 0);
         msg->setWindowFlags(msg->windowFlags() | Qt::WindowStaysOnTopHint);
-        //msg->exec();
+        msg->setModal(true);//模态 非模态显示
         msg->show();
     }
 
@@ -77,7 +77,7 @@ public:
         frmMessageBox *msg = new frmMessageBox;
         msg->SetMessage(info, 2);
         msg->setWindowFlags(msg->windowFlags() | Qt::WindowStaysOnTopHint);
-        //msg->exec();
+        msg->setModal(true);//模态 非模态显示
         msg->show();
     }
 
@@ -89,7 +89,7 @@ public:
         msg->setWindowFlags(msg->windowFlags() | Qt::WindowStaysOnTopHint);
         return msg->exec();
     }
-*/
+
     //延时
     static void Sleep(int sec)
     {

@@ -31,7 +31,8 @@ SOURCES += main.cpp\
     QsLog/QsLogDestFile.cpp \
     QsLog/QsLogDestConsole.cpp \
     QsLog/QsLogDest.cpp \
-    QsLog/QsLog.cpp
+    QsLog/QsLog.cpp \
+    frmmessagebox.cpp
 
 HEADERS  += frmmain.h \
     Api/iconhelper.h \
@@ -43,9 +44,11 @@ HEADERS  += frmmain.h \
     QsLog/QsLogDestFile.h \
     QsLog/QsLogDestConsole.h \
     QsLog/QsLogDest.h \
-    QsLog/QsLog.h
+    QsLog/QsLog.h \
+    frmmessagebox.h
 
-FORMS    += frmmain.ui
+FORMS    += frmmain.ui \
+    frmmessagebox.ui
 MOC_DIR=temp/moc
 RCC_DIR=temp/rcc
 UI_DIR=temp/ui

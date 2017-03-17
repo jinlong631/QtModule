@@ -70,7 +70,9 @@ void FrmMain::InitStyle()
     //toolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);//图标在前 文字在后
     //toolBar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);//图标在上 文字在下
     toolBar->setToolButtonStyle(Qt::ToolButtonIconOnly);
-
+    connect(ui->btnInfo,SIGNAL(clicked(bool)),this,SLOT(slotShowInfobox()));
+    connect(ui->btnQuestion,SIGNAL(clicked(bool)),this,SLOT(slotShowQuestionbox()));
+    connect(ui->btnError,SIGNAL(clicked(bool)),this,SLOT(slotShowErrorbox()));
 }
 
 bool FrmMain::eventFilter(QObject *obj, QEvent *event)
@@ -182,4 +184,16 @@ void FrmMain::slotchangedToBlack()
 void FrmMain::slotchangedToNavy()
 {
     myHelper::SetStyle("navy");//天蓝色色风格
+}
+void FrmMain::slotShowInfobox()
+{
+    myHelper::ShowMessageBoxInfo("今天是个好天气。");
+}
+void FrmMain::slotShowErrorbox()
+{
+    myHelper::ShowMessageBoxError("程序出现错误！");
+}
+void FrmMain::slotShowQuestionbox()
+{
+    myHelper::ShowMessageBoxQuesion("今天工作顺利吗？");
 }

@@ -32,6 +32,9 @@ private slots:
     void slotchangedToBlue();
     void slotchangedToBlack();
     void slotchangedToNavy();
+    void slotShowInfobox();
+    void slotShowErrorbox();
+    void slotShowQuestionbox();
 private:
     Ui::FrmMain *ui;
 
